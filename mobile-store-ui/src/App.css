@@ -1,0 +1,154 @@
+/* ===============================
+   Design System
+================================ */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-light: #64748b;
+  --border-light: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1e40af;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* ===============================
+   Page Wrapper
+================================ */
+.parentClass {
+  max-width: 920px;
+  margin: 60px auto;
+  padding: 45px;
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+  border-radius: 18px;
+}
+
+/* ===============================
+   Section Titles
+================================ */
+.parentClass h1 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-main);
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.parentClass h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 42px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* ===============================
+   Card Layout
+================================ */
+.add-custumer,
+.add-mobile,
+.create-transaction,
+.customer-purchases,
+.total-sales {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ===============================
+   Inputs
+================================ */
+input {
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  background-color: #fdfefe;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: var(--text-light);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ===============================
+   Buttons
+================================ */
+button {
+  grid-column: span 2;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent), #3b82f6);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   Centered Button Section
+================================ */
+.total-sales {
+  display: flex;
+  justify-content: center;
+}
+
+/* ===============================
+   Dividers
+================================ */
+hr {
+  margin: 35px 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-light), transparent);
+}
+
+/* ===============================
+   Responsive
+================================ */
+@media (max-width: 640px) {
+  .parentClass {
+    padding: 28px;
+  }
+
+  button {
+    grid-column: span 1;
+    width: 100%;
+  }
+}
+
+
